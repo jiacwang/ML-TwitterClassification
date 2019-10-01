@@ -1,0 +1,16 @@
+# Progress
+
+Nothing below 1.05 on 10-fold cross-validation as queried in the script
+`disciminative.m`... Have tried random forest, logistic regression, SVM. Random
+forest has parameter for inputting cost matrix. Logistic regression done using
+`lassoglm` on 5 one vs rest problems with observations reweighted according to
+cost of misclassifying. Used to make probability estimate for CPE prediction.
+SVM done with liblinear with 5 5-class fits using similar weighting scheme as
+before. Sum of output scores for classifying, picking highest one. Using system
+for chaining preprocessing steps modeled after `sklearn` pipelines. Implemented
+SVD and tf-idf preprocessing steps. Have also tried stacking random forest on
+top of probability estimates from logistic regression. Still have not broken
+the 0.95 baseline barrier.
+
+Created NB model with Laplace prior. Very vanilla NB model. Successfully broke
+first baseline.
